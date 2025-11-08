@@ -7,7 +7,7 @@ import "./App.css";
 const ALL_PLANTS = [
   {
     id: 1,
-    name: "Wild Garlic (Ramsons)",
+    name: "English Lavender",
     img: "https://placehold.co/300x200/22c55e/ffffff?text=Wild+Garlic",
     season: "Spring",
     landscape: "Forest",
