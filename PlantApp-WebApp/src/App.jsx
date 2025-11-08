@@ -120,7 +120,14 @@ function PlantCard({ plant }) {
         <p className="plant-card-description">{plant.describtion}</p>
 
         <div className="plant-card-tags">
-          <span className="plant-tag">{plant.season}</span>
+          {/* This loops over your season array and makes a tag for each one */}
+          {plant.season.map((s) => (
+            <span className="plant-tag" key={s}>
+              {s}
+            </span>
+          ))}
+
+          {/* This is your original landscape tag */}
           <span className="plant-tag">{plant.landscape}</span>
         </div>
       </div>
