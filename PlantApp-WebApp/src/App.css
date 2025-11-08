@@ -34,6 +34,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  text-align: center;
 }
 
 .app-header {
@@ -89,11 +90,14 @@ body {
 
 /* Plant Grid */
 .plant-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   /* This creates a responsive grid. It will be 1 column on small screens,
      2 on medium, and 3 on large screens. */
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
 }
 
 .no-results-message {
