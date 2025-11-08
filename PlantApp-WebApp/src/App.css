@@ -1,42 +1,152 @@
-#root {
-  max-width: 1280px;
+/* Reset and base styles. 
+  Vite already includes a good reset in index.css,
+  but we add a few things here for our app.
+*/
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  /* === YOUR COLORS GO HERE === */
+  /* Replace these placeholder values with your actual color codes */
+  --color-primary: #22c55e; /* Your Primary color */
+  --color-secondary: #a3bf62; /* Your Secondary color (I've added this for you) */
+  --color-bg: #f8f7f4; /* Your Background color */
+  --color-text: #333; /* Your Text color */
+
+  /* --- Other app colors --- */
+  --color-card-bg: #ffffff;
+  --color-tag-bg: #ecfdf5;
+  --color-tag-text: #065f46;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --border-radius: 0.5rem; /* 8px */
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* Main App Layout */
+.app-container {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+.app-header {
   text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #111;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-header p {
+  font-size: 1.125rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Filter Controls */
+.filter-controls {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
 }
 
-.card {
-  padding: 2em;
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.read-the-docs {
-  color: #888;
+.filter-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.filter-group select {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ddd;
+  background-color: var(--color-card-bg);
+  box-shadow: var(--shadow-sm);
+  min-width: 200px;
+  cursor: pointer;
+}
+
+/* Plant Grid */
+.plant-grid {
+  display: grid;
+  /* This creates a responsive grid. It will be 1 column on small screens,
+     2 on medium, and 3 on large screens. */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.no-results-message {
+  font-size: 1.125rem;
+  color: #777;
+  text-align: center;
+  /* Span across the entire grid */
+  grid-column: 1 / -1;
+  padding: 2rem;
+}
+
+/* Plant Card */
+.plant-card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden; /* This keeps the image corners rounded */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.plant-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.plant-card-content {
+  padding: 1.25rem;
+}
+
+.plant-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+}
+
+.plant-card-tags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.plant-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background-color: var(--color-tag-bg);
+  color: var(--color-tag-text);
 }
