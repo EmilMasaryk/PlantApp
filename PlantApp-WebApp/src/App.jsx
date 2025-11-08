@@ -115,10 +115,10 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>Plant Encyclopedia</h1>
+        <h1>PlantApp</h1>
         <p>
-          Browse and filter plants by season and landscape to find what you're
-          looking for.
+          A Foraging guide for learning about wild plants in different seasons
+          and ladscapes.
         </p>
       </header>
 
