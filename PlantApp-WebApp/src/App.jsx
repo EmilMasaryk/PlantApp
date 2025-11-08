@@ -9,7 +9,7 @@ const ALL_PLANTS = [
     id: 1,
     name: "English Lavender",
     img: "/Lavender.jpg",
-    season: "Spring",
+    season: "Summer",
     landscape: "Forest",
     latinName: "Levandula angustifolia",
     describtion:
@@ -19,7 +19,7 @@ const ALL_PLANTS = [
     id: 2,
     name: "Stinging Nettle",
     img: "Nettle.jpg",
-    season: "Spring",
+    season: ["Spring", "Summer"],
     landscape: "Grassland",
     latinName: "Urtica dioicaia",
     describtion:
@@ -29,7 +29,7 @@ const ALL_PLANTS = [
     id: 3,
     name: "Rose Hip",
     img: "/RoseHip.jpg",
-    season: "Summer",
+    season: "Autumn",
     landscape: "Riverside",
     latinName: "Rosa canina L.",
     describtion:
@@ -49,7 +49,7 @@ const ALL_PLANTS = [
     id: 5,
     name: "Plantago(Plantain)",
     img: "/Plantain.jpg",
-    season: "Autumn",
+    season: ["Summer", "Autumn"],
     landscape: "Grassland",
     latinName: "Plantago major",
     describtion:
@@ -79,7 +79,7 @@ const ALL_PLANTS = [
     id: 8,
     name: "Raspberry",
     img: "/raspberry.jpg",
-    season: "Winter",
+    season: "Summer",
     landscape: "Grassland",
     latinName: "Rubus idaeus",
     describtion:
@@ -142,7 +142,9 @@ function App() {
   // This logic runs every time the component re-renders (i.e., when state changes).
   const filteredPlants = ALL_PLANTS.filter((plant) => {
     // Check for season match
-    const seasonMatch = seasonFilter === "All" || plant.season === seasonFilter;
+    // old -> const seasonMatch = seasonFilter === "All" || plant.season === seasonFilter;
+    const seasonMatch =
+      seasonFilter === "All" || plant.season.includes(seasonFilter);
     // Check for landscape match
     const landscapeMatch =
       landscapeFilter === "All" || plant.landscape === landscapeFilter;
