@@ -1,17 +1,13 @@
-/* Reset and base styles. 
-  Vite already includes a good reset in index.css,
-  but we add a few things here for our app.
-*/
+/* Reset and base styles. */
 :root {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-  /* === YOUR COLORS GO HERE === */
-  /* Replace these placeholder values with your actual color codes */
-  --color-primary: #0cdd39; /* Your Primary color */
-  --color-secondary: #0dbff2; /* Your Secondary color (I've added this for you) */
-  --color-bg: #f5f5e6; /* Your Background color */
-  --color-text: #000000; /* Your Text color */
+  /* === YOUR COLORS === */
+  --color-primary: #0cdd39;
+  --color-secondary: #0dbff2;
+  --color-bg: #f5f5e6;
+  --color-text: #000000;
 
   /* --- Other app colors --- */
   --color-card-bg: #ffffff;
@@ -27,6 +23,10 @@ body {
   color: var(--color-text);
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Main App Layout */
@@ -90,27 +90,26 @@ body {
 
 /* Plant Grid */
 .plant-grid {
+  /* This is the Flexbox centering solution */
   display: flex;
   flex-wrap: wrap;
-  /* This creates a responsive grid. It will be 1 column on small screens,
-     2 on medium, and 3 on large screens. */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, 300px);
   justify-content: center;
+  gap: 1.5rem;
 }
 
 .no-results-message {
   font-size: 1.125rem;
   color: #777;
   text-align: center;
-  /* Span across the entire grid */
-  grid-column: 1 / -1;
+  /* This needs a width to work in a flexbox */
+  width: 100%;
   padding: 2rem;
 }
 
 /* Plant Card */
 .plant-card {
+  /* This fixed width is crucial for the flexbox centering */
+  width: 300px;
   background-color: var(--color-card-bg);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-md);
@@ -132,6 +131,8 @@ body {
 
 .plant-card-content {
   padding: 1.25rem;
+  /* ADD THIS LINE to make sure text inside the card is left-aligned */
+  text-align: left;
 }
 
 .plant-card-title {
