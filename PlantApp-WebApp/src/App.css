@@ -8,10 +8,10 @@
 
   /* === YOUR COLORS GO HERE === */
   /* Replace these placeholder values with your actual color codes */
-  --color-primary: #22c55e; /* Your Primary color */
-  --color-secondary: #a3bf62; /* Your Secondary color (I've added this for you) */
-  --color-bg: #f8f7f4; /* Your Background color */
-  --color-text: #333; /* Your Text color */
+  --color-primary: #0cdd39; /* Your Primary color */
+  --color-secondary: #0dbff2; /* Your Secondary color (I've added this for you) */
+  --color-bg: #f5f5e6; /* Your Background color */
+  --color-text: #000000; /* Your Text color */
 
   /* --- Other app colors --- */
   --color-card-bg: #ffffff;
