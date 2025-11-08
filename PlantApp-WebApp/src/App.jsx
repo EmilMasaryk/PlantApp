@@ -9,7 +9,7 @@ const ALL_PLANTS = [
     id: 1,
     name: "English Lavender",
     img: "/Lavender.jpg",
-    season: "Summer",
+    season: ["Summer"],
     landscape: "Forest",
     latinName: "Levandula angustifolia",
     describtion:
@@ -29,7 +29,7 @@ const ALL_PLANTS = [
     id: 3,
     name: "Rose Hip",
     img: "/RoseHip.jpg",
-    season: "Autumn",
+    season: ["Autumn"],
     landscape: "Riverside",
     latinName: "Rosa canina L.",
     describtion:
@@ -39,7 +39,7 @@ const ALL_PLANTS = [
     id: 4,
     name: "Sea Buckthorn",
     img: "/SeaBuckthorn.jpg",
-    season: "Autumn",
+    season: ["Autumn"],
     landscape: "Forest",
     latinName: "Hippophae rhamnoides",
     describtion:
@@ -59,7 +59,7 @@ const ALL_PLANTS = [
     id: 6,
     name: "Peppermint",
     img: "/Mint.jpg",
-    season: "Summer",
+    season: ["Summer"],
     landscape: "Riverside",
     latinName: "Mentha piperita",
     describtion:
@@ -69,7 +69,7 @@ const ALL_PLANTS = [
     id: 7,
     name: "Blueberry",
     img: "/Blueberry.jpg",
-    season: "Spring",
+    season: ["Spring", "Summer", "Autumn"],
     landscape: "Grassland",
     latinName: "Vaccinium corymbosum",
     describtion:
@@ -79,7 +79,7 @@ const ALL_PLANTS = [
     id: 8,
     name: "Raspberry",
     img: "/raspberry.jpg",
-    season: "Summer",
+    season: ["Summer"],
     landscape: "Grassland",
     latinName: "Rubus idaeus",
     describtion:
@@ -89,7 +89,7 @@ const ALL_PLANTS = [
     id: 9,
     name: "Caraway(Cumin)",
     img: "/Caraway.jpg",
-    season: "Winter",
+    season: ["Winter"],
     landscape: "Forest",
     latinName: "Carum carvi",
     describtion:
