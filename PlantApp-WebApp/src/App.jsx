@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+//import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import { supabase } from "./supabaseClient.js";
 
 // --- 1. Mock Data ---
 // In a real app, you'd get this from a database. For a prototype,
