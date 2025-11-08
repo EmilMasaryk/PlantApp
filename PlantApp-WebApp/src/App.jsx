@@ -132,10 +132,10 @@ function App() {
 
       {/* --- Plant Grid --- */}
       <div className="plant-grid">
-        {/* We map over the 'filteredPlants' array.
-          If there are no plants, we show a message.
-        */}
-        {filteredPlants.length > 0 ? (
+        {/* --- ADD THIS LOADING CHECK --- */}
+        {loading ? (
+          <p className="no-results-message">Loading plants...</p>
+        ) : filteredPlants.length > 0 ? (
           filteredPlants.map((plant) => (
             <PlantCard key={plant.id} plant={plant} />
           ))
