@@ -50,6 +50,27 @@ function App() {
   const [seasonFilter, setSeasonFilter] = useState("All");
   const [landscapeFilter, setLandscapeFilter] = useState("All");
 
+  const [plants, setPlants] = useState([]); // This will hold your plants
+  const [loading, setLoading] = useState(true); // This tracks the "loading..." state
+
+  // --- This hook fetches data from Supabase ---
+  useEffect(() => {
+    // This async function does the actual fetching
+    async function getPlants() {
+      // 'plants' is the name of your Supabase table
+      const { data, error } = await supabase.from("plants").select("*");
+
+      if (error) {
+        console.warn(error); // Show any errors in the console
+      } else if (data) {
+        setPlants(data); // Put the loaded data into our 'plants' state
+      }
+      setLoading(false); // We're done loading
+    }
+
+    getPlants(); // Run the function
+  }, []); // The empty [] means "run this only once when the page loads"
+
   // --- 5. Filter Logic ---
   // We create a *new* array of plants based on the current filter state.
   // This logic runs every time the component re-renders (i.e., when state changes).
