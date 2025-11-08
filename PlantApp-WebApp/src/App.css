@@ -87,6 +87,7 @@ body {
   box-shadow: var(--shadow-sm);
   min-width: 200px;
   cursor: pointer;
+  color: var(--color-text);
 }
 
 /* Plant Grid */
