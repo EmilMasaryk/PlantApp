@@ -10,7 +10,7 @@ const ALL_PLANTS = [
     name: "English Lavender",
     img: "/Lavender.jpg",
     season: ["Summer"],
-    landscape: "Forest",
+    landscape: "Grassland",
     latinName: "Levandula angustifolia",
     describtion:
       "Lavender is a fragrant herb known for its beautiful purple flowers and calming scent. It is often used in aromatherapy, cooking, and as an ornamental plant in gardens.",
@@ -18,7 +18,7 @@ const ALL_PLANTS = [
   {
     id: 2,
     name: "Stinging Nettle",
-    img: "Nettle.jpg",
+    img: "/Nettle.jpg",
     season: ["Spring", "Summer"],
     landscape: "Grassland",
     latinName: "Urtica dioicaia",
