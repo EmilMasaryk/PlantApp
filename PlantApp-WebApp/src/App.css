@@ -131,15 +131,32 @@ body {
 }
 
 .plant-card-content {
-  padding: 1.25rem;
+  padding: 10px;
   /* ADD THIS LINE to make sure text inside the card is left-aligned */
   text-align: left;
 }
 
 .plant-card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Familjen Grotesk, sans-serif;
+  margin: 0 0 0.25rem 0;
+}
+
+.plant-card-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Famiiljen Grotesk, sans-serif;
+  color: #666;
   margin: 0 0 0.75rem 0;
+}
+
+.plant-card-description {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Bespoke Sans, sans-serif;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
 }
 
 .plant-card-tags {
