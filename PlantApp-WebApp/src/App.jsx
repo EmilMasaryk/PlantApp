@@ -74,7 +74,7 @@ function App() {
   // --- 5. Filter Logic ---
   // We create a *new* array of plants based on the current filter state.
   // This logic runs every time the component re-renders (i.e., when state changes).
-  const filteredPlants = ALL_PLANTS.filter((plant) => {
+  const filteredPlants = plants.filter((plant) => {
     // Check for season match
     // old -> const seasonMatch = seasonFilter === "All" || plant.season === seasonFilter;
     const seasonMatch =
