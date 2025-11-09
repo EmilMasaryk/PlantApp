@@ -91,7 +91,7 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>PlantApp</h1>
+        <img src="/LogoPlantApp.svg" alt="PlantApp Logo" className="app-logo" />
         <p>
           A Foraging guide for learning about wild plants in different seasons
           and ladscapes.
