@@ -7,7 +7,7 @@
   /* === YOUR COLORS === */
   --color-primary: #0cdd39;
   --color-secondary: #0dbff2;
-  --color-bg: #f5f5e6;
+  --color-bg: #f9f9f0;
   --color-text: #000000;
 
   /* --- Other app colors --- */
@@ -58,7 +58,7 @@ body {
 }
 
 .content-background-rectangle {
-  background-color: #f0f0db;
+  background-color: #f9f9f0;
   border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
