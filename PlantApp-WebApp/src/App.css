@@ -182,3 +182,9 @@ body {
   background-color: var(--color-tag-bg);
   color: var(--color-tag-text);
 }
+
+.app-logo {
+  /* Set a height for your logo. You can change this! */
+  height: 100px;
+  width: auto; /* This keeps the aspect ratio correct */
+}
