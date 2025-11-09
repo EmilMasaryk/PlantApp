@@ -104,53 +104,54 @@ function App() {
           and ladscapes.
         </p>
       </header>
+      <div className="content-background-rectangle">
+        {/* --- Filter Controls --- */}
+        <div className="filter-controls">
+          <div className="filter-group">
+            <label htmlFor="season-filter">Filter by Season</label>
+            <select
+              id="season-filter"
+              value={seasonFilter}
+              onChange={(e) => setSeasonFilter(e.target.value)}
+            >
+              <option value="All">All Seasons</option>
+              <option value="Spring">Spring</option>
+              <option value="Summer">Summer</option>
+              <option value="Autumn">Autumn</option>
+              <option value="Winter">Winter</option>
+            </select>
+          </div>
 
-      {/* --- Filter Controls --- */}
-      <div className="filter-controls">
-        <div className="filter-group">
-          <label htmlFor="season-filter">Filter by Season</label>
-          <select
-            id="season-filter"
-            value={seasonFilter}
-            onChange={(e) => setSeasonFilter(e.target.value)}
-          >
-            <option value="All">All Seasons</option>
-            <option value="Spring">Spring</option>
-            <option value="Summer">Summer</option>
-            <option value="Autumn">Autumn</option>
-            <option value="Winter">Winter</option>
-          </select>
+          <div className="filter-group">
+            <label htmlFor="landscape-filter">Filter by Landscape</label>
+            <select
+              id="landscape-filter"
+              value={landscapeFilter}
+              onChange={(e) => setLandscapeFilter(e.target.value)}
+            >
+              <option value="All">All Landscapes</option>
+              <option value="Forest">Forest</option>
+              <option value="Grassland">Grassland</option>
+              <option value="Riverside">Riverside</option>
+            </select>
+          </div>
         </div>
 
-        <div className="filter-group">
-          <label htmlFor="landscape-filter">Filter by Landscape</label>
-          <select
-            id="landscape-filter"
-            value={landscapeFilter}
-            onChange={(e) => setLandscapeFilter(e.target.value)}
-          >
-            <option value="All">All Landscapes</option>
-            <option value="Forest">Forest</option>
-            <option value="Grassland">Grassland</option>
-            <option value="Riverside">Riverside</option>
-          </select>
+        {/* --- Plant Grid --- */}
+        <div className="plant-grid">
+          {/* --- ADD THIS LOADING CHECK --- */}
+          {loading ? (
+            <p className="no-results-message">Loading plants...</p>
+          ) : filteredPlants.length > 0 ? (
+            filteredPlants.map((plant) => (
+              <PlantCard key={plant.id} plant={plant} />
+            ))
+          ) : (
+            <p className="no-results-message">
+              No plants match your current filters.
+            </p>
+          )}
         </div>
-      </div>
-
-      {/* --- Plant Grid --- */}
-      <div className="plant-grid">
-        {/* --- ADD THIS LOADING CHECK --- */}
-        {loading ? (
-          <p className="no-results-message">Loading plants...</p>
-        ) : filteredPlants.length > 0 ? (
-          filteredPlants.map((plant) => (
-            <PlantCard key={plant.id} plant={plant} />
-          ))
-        ) : (
-          <p className="no-results-message">
-            No plants match your current filters.
-          </p>
-        )}
       </div>
     </div>
   );
