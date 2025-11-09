@@ -58,15 +58,15 @@ body {
 }
 
 .content-background-rectangle {
-  background-color: #f9f9f0;
+  background-color: #f0f0db;
   border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0 rem;
-  padding: 1rem;
-  max-width: 990px; /* Make it narrower than the 1200px page */
-  margin: 0 auto;
+  padding: 2rem;
+  max-width: 980px; /* Make it narrower than the 1200px page */
+  margin: 0 auto, var(--border-radius);
 }
 /* Filter Controls */
 .filter-controls {
