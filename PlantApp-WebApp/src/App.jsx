@@ -10,7 +10,10 @@ function PlantCard({ plant }) {
   return (
     <div className="plant-card">
       <img
-        src={plant.img}
+        //src={plant.img}
+        src={`${import.meta.env.BASE_URL}${
+          plant.img.startsWith("/") ? plant.img.substring(1) : plant.img
+        }`}
         alt={plant.name}
         className="plant-card-image"
         // This 'onError' is a fallback, in case an image is missing
@@ -91,7 +94,11 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <img src="/LogoPlantApp.svg" alt="PlantApp Logo" className="app-logo" />
+        <img
+          src={`${import.meta.env.BASE_URL}LogoPlantApp.svg`}
+          alt="PlantApp Logo"
+          className="app-logo"
+        />
         <p>
           A Foraging guide for learning about wild plants in different seasons
           and ladscapes.
